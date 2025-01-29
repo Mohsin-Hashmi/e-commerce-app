@@ -13,4 +13,13 @@ const validateUser = (req) => {
   }
 };
 
-module.exports = validateUser;
+const validateLoginUser= (req)=>{
+  const {email, password}= req.body;
+  if(!email || !password){
+    throw new Error("All fields are required");
+  }else if(!validater.isEmail(email)){
+    throw new Error("Email is invalid")
+  }
+}
+
+module.exports = {validateUser, validateLoginUser};
