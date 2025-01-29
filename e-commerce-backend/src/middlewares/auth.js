@@ -8,7 +8,7 @@ const userAuth = async (req, res, next) => {
         if (!token) {
             return res.status(400).json({ message: "Please login first" });
         }
-        const isValidToken = await jwt.varify(token, "JWT_SECRET");
+        const isValidToken = await jwt.verify(token, "JWT_SECRET");
         if (!isValidToken) {
             return res.status(400).json({ message: "Invalid token" });
         }

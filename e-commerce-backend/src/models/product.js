@@ -11,7 +11,8 @@ const productSchema= new mongoose.Schema({
         required:true
     },
     description:{
-        type:String
+        type:String,
+        required:true
     },
     category:{
         type:String,
@@ -19,10 +20,12 @@ const productSchema= new mongoose.Schema({
     },
     stock:{
         type:Number,
-        default:0
+        default:0,
+        required:true
     },
     image:{
-        type:String
+        type:String,
+        required:true
     }
 });
 

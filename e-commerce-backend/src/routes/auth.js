@@ -8,18 +8,20 @@ const jwt = require('jsonwebtoken');
 /**Signup API */
 authRouter.post("/signup", async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
     validateUser(req);
     const HASHED_PASSWORD = await bcrypt.hash(password, 10);
+    const assignedRole = role && ['admin', 'user'].includes(role) ? role : 'user';
 
     const user = new User({
       name,
       email,
       password: HASHED_PASSWORD,
+      role: assignedRole, 
     });
     await user.save();
     res.status(201).json({
-      message: "User signed up successfully",
+      message: "User signed up successfully", user
     });
   } catch (err) {
     res.status(400).send("ERROR : " + err.message);
@@ -29,7 +31,7 @@ authRouter.post("/signup", async (req, res) => {
 /**Login API */
 authRouter.post("/login", async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, role} = req.body;
     validateLoginUser(req);
     const user = await User.findOne({ email })
     if (!user) {
@@ -39,9 +41,9 @@ authRouter.post("/login", async (req, res) => {
     if (!isPasswordValid) {
       return res.status(400).json({ message: "Invalid credentials" })
     }
-    const token = jwt.sign({ _id: user._id }, "JWT_SECRET", { expiresIn: "7d" });
+    const token = jwt.sign({ _id: user._id ,  role: user.role }, "JWT_SECRET", { expiresIn: "7d" });
     res.cookie("token", token, { httpOnly: true });
-    res.status(200).json({ message: "User logged in successfully", name: user.name, email: user.email });
+    res.status(200).json({ message: "User logged in successfully", name: user.name, email: user.email, role: user.role, });
 
   } catch (err) {
     res.status(400).send("ERROR : " + err.message);
