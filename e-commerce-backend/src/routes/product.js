@@ -2,9 +2,9 @@
 const express = require('express');
 const productRouter = express.Router();
 const userAuth = require("../middlewares/auth");
-const isAdmin= require("../middlewares/admin");
+const isAdmin = require("../middlewares/admin");
 const Product = require('../models/product');
-const {validateProduct} = require("../utils/validation");
+const { validateProduct } = require("../utils/validation");
 
 /**View all products */
 productRouter.get('/view/products', userAuth, async (req, res) => {
@@ -24,11 +24,11 @@ productRouter.get('/view/products', userAuth, async (req, res) => {
 });
 
 /**Add Product API */
-productRouter.post('/add/product', userAuth, isAdmin,  async( req, res)=>{
-    try{
+productRouter.post('/add/product', userAuth, isAdmin, async (req, res) => {
+    try {
         validateProduct(req);
         const { name, price, description, category, stock, image } = req.body;
-        const newProduct= new Product({
+        const newProduct = new Product({
             name,
             price,
             description,
@@ -37,9 +37,9 @@ productRouter.post('/add/product', userAuth, isAdmin,  async( req, res)=>{
             image
         })
         const product = await newProduct.save();
-        res.status(201).json({message: "Product added successfully", product})
+        res.status(201).json({ message: "Product added successfully", product })
 
-    }catch(err){
+    } catch (err) {
         res.status(400).send("ERROR : " + err.message);
     }
 })
