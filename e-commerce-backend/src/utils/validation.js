@@ -30,4 +30,10 @@ const validateProduct = (req) => {
     throw new Error("Price must be greater than 0");
   }
 };
-module.exports = { validateUser, validateLoginUser, validateProduct };
+
+const validateProductFields = (req) => {
+  const editAbleData = ["name, price, description, category, stock, image"];
+  const isEditAllowed = Object.keys(req.body).every((field) => editAbleData.includes(field));
+  return isEditAllowed;
+}
+module.exports = { validateUser, validateLoginUser, validateProduct, validateProductFields };
