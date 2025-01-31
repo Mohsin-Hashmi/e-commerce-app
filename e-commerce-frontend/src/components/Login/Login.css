@@ -1,0 +1,71 @@
+.loginPageImage{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100vw;   
+    height: 100vh;  
+    object-fit: contain; 
+    object-position: right center;
+}
+.loginFormWrapper{
+    position: absolute;
+    top: 50%;
+    margin-left: 128px;
+}
+.loginHeading{
+    margin-bottom: 40px;
+}
+.loginForm{
+    max-width: 403px;
+    width: 100%;
+}
+.inputField{
+    width: 100%;
+    padding: 14px 20px;
+    outline: none;
+    border: 1px solid #E0E2E9;
+    border-radius: 8px;
+}
+.emailField{
+    margin-bottom: 20px;
+}
+.loginButton{
+    width: 100%;
+    padding: 12px;
+    margin: 24px 0 12px 0;
+    cursor: pointer;
+    background-color: #0062FF;
+    border: none;
+    color: #FFFFFF;
+    font-size: 15px;
+    border-radius: 8px;
+}
+.forgetPasswordLink{
+    float: right;
+    color: #0062FF;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .divider::before,
+  .divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .divider:not(:empty)::before {
+    margin-right: 10px;
+  }
+  
+  .divider:not(:empty)::after {
+    margin-left: 10px;
+  }
+  
