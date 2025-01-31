@@ -1,9 +1,25 @@
 import loginImage from "../../assets/images/login-bg-image.webp";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import googleLogo from "../../assets/images/google-logo.webp";
 import facebookLogo from "../../assets/images/fackbook-logo.webp";
+import { LoginAPI } from "../../services/LoginAPI";
 import "./Login.css";
 const Login = () => {
+  const [email, setEmail]= useState('');
+  const [password, setPassword]= useState('');
+
+  const handleSubmit= async(e)=>{
+    e.preventDefault();
+    try{
+      const response = await LoginAPI({email, password});
+      if(response.status===200){
+        console.log("Login successful:", response.data);
+      }
+    }catch(err){
+      console.log(err);
+    }
+  }
   return (
     <>
       <section className="loginSec">
@@ -24,18 +40,22 @@ const Login = () => {
           </div>
           <div className="loginFormWrapper">
             <h1 className="loginHeading">Log In</h1>
-            <form className="loginForm" action="">
+            <form className="loginForm" action="" onSubmit={handleSubmit}>
               <input
                 className="inputField emailField"
                 type="email"
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
                 placeholder="Your email"
               />
               <input
                 className="inputField"
                 type="password"
+                value={password}
+                onChange={(e)=>setPassword(e.target.value)}
                 placeholder="Password"
               />
-              <button className="loginButton">Login</button>
+              <button type="submit" className="loginButton">Login</button>
               <Link to="" className="forgetPasswordLink">
                 Forgot password?
               </Link>
