@@ -1,71 +1,142 @@
-.loginPageImage{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100vw;   
-    height: 100vh;  
-    object-fit: contain; 
-    object-position: right center;
+.loginPageImage {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  object-position: right center;
 }
-.loginFormWrapper{
-    position: absolute;
-    top: 50%;
-    margin-left: 128px;
+.loginFormWrapper {
+  position: absolute;
+  margin-left: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  height: 100vh;
 }
-.loginHeading{
-    margin-bottom: 40px;
+.overlay-text {
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  text-align: start;
+  color: #3a424a;
+  font-size: 32px;
+  font-weight: 400;
+  width: 80%;
+  max-width: 600px;
 }
-.loginForm{
-    max-width: 403px;
-    width: 100%;
+.overlay-text span {
+  color: #3062d4;
 }
-.inputField{
-    width: 100%;
-    padding: 14px 20px;
-    outline: none;
-    border: 1px solid #E0E2E9;
-    border-radius: 8px;
+.writerName {
+  float: right;
+  color: #3a424a;
+  font-size: 24px;
 }
-.emailField{
-    margin-bottom: 20px;
+.loginHeading {
+  margin-bottom: 40px;
 }
-.loginButton{
-    width: 100%;
-    padding: 12px;
-    margin: 24px 0 12px 0;
-    cursor: pointer;
-    background-color: #0062FF;
-    border: none;
-    color: #FFFFFF;
-    font-size: 15px;
-    border-radius: 8px;
+.loginForm {
+  max-width: 403px;
+  width: 100%;
 }
-.forgetPasswordLink{
-    float: right;
-    color: #0062FF;
-    text-decoration: none;
-    font-size: 15px;
+.textFieldsWrap {
+  display: flex;
+}
+.inputField {
+  width: 100%;
+  padding: 14px 20px;
+  outline: none;
+  border: 1px solid #e0e2e9;
+  border-radius: 8px;
+}
+
+.emailField {
+  margin-bottom: 20px;
+}
+
+.loginButton {
+  width: 100%;
+  padding: 12px;
+  margin: 24px 0 12px 0;
+  cursor: pointer;
+  background-color: #0062ff;
+  border: none;
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 1px solid  transparent;
+}
+.loginButton:hover{
+    border: 1px solid #0062ff;
+    background-color: #FFFFFF;
+    color: #0062ff;
+}
+.forgetPasswordLink {
+  float: right;
+  color: #0062ff;
+  text-decoration: none;
+  font-size: 15px;
 }
 
 .divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 20px 0;
-  }
-  
-  .divider::before,
-  .divider::after {
-    content: "";
-    flex: 1;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .divider:not(:empty)::before {
-    margin-right: 10px;
-  }
-  
-  .divider:not(:empty)::after {
-    margin-left: 10px;
-  }
-  
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.divider:not(:empty)::before {
+  margin-right: 10px;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 10px;
+}
+.socialAccountsWrap {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.socialAccountCard {
+  max-width: 190px;
+  width: 100%;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  justify-content: center;
+  border: 1px solid #e0e2e9;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #171725;
+  font-size: 14px;
+  font-weight: bold;
+}
+.socialAccountCard:hover{
+    border: 1px solid #0062ff;
+}
+.signUpLinkPara {
+  margin-top: 40px;
+  color: #969ab8;
+}
+.signupLink {
+  color: #0062ff;
+  text-decoration: none;
+  font-size: 15px;
+  margin-left: 8px;
+}
+.signupLink:hover {
+  text-decoration: underline;
+}
