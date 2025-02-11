@@ -1,0 +1,22 @@
+.signupPageImage{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    object-position: right center;
+}
+.signupFormWrapper{
+    position: absolute;
+    margin-left: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    height: 100vh;
+}
+.signupForm{
+    max-width: 403px;
+    width: 100%;
+}
