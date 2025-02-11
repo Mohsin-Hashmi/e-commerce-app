@@ -8,16 +8,22 @@ const jwt = require('jsonwebtoken');
 /**Signup API */
 authRouter.post("/signup", async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, password, confirmPassword, role } = req.body;
     validateUser(req);
     const HASHED_PASSWORD = await bcrypt.hash(password, 10);
     const assignedRole = role && ['admin', 'user'].includes(role) ? role : 'user';
-
+    if (password !== confirmPassword) {
+      return res.status(400).json({ message: "Passwords do not match" });
+    }
+    const existingUser = await User.findOne({ email });
+    if (existingUser)
+      return res.status(400).json({ message: "User already exists" });
+    
     const user = new User({
       name,
       email,
       password: HASHED_PASSWORD,
-      role: assignedRole, 
+      role: assignedRole,
     });
     await user.save();
     res.status(201).json({
@@ -31,7 +37,7 @@ authRouter.post("/signup", async (req, res) => {
 /**Login API */
 authRouter.post("/login", async (req, res) => {
   try {
-    const { email, password, role} = req.body;
+    const { email, password, role } = req.body;
     validateLoginUser(req);
     const user = await User.findOne({ email })
     if (!user) {
@@ -41,7 +47,7 @@ authRouter.post("/login", async (req, res) => {
     if (!isPasswordValid) {
       return res.status(400).json({ message: "Invalid credentials" })
     }
-    const token = jwt.sign({ _id: user._id ,  role: user.role }, "JWT_SECRET", { expiresIn: "7d" });
+    const token = jwt.sign({ _id: user._id, role: user.role }, "JWT_SECRET", { expiresIn: "7d" });
     res.cookie("token", token, { httpOnly: true });
     res.status(200).json({ message: "User logged in successfully", name: user.name, email: user.email, role: user.role, });
 
