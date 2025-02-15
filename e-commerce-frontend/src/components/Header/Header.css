@@ -1,0 +1,25 @@
+.header{
+    padding: 18px 0;
+}
+.headerNavbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.headerNavbarOptions{
+    display: flex;
+    column-gap: 40px;
+    
+}
+.navbarLinks{
+    text-decoration: none;
+    font-size: 14px;
+    color: #6C7275;
+}
+.navbarLinks:hover{
+    color: #141718;
+}
+.headerNavbarLogs{
+    display: flex;
+    column-gap: 16px;
+}

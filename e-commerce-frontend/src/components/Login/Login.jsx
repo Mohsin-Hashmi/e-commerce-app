@@ -76,7 +76,7 @@ const Login = () => {
               <p className="signUpLinkPara">
                 Don’t have an account?
                 <span>
-                  <Link to="" className="signupLink">
+                  <Link to="/signup" className="signupLink">
                     Sign Up
                   </Link>
                 </span>

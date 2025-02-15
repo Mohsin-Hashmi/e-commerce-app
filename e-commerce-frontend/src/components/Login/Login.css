@@ -68,12 +68,12 @@
   color: #ffffff;
   font-size: 18px;
   border-radius: 8px;
-  border: 1px solid  transparent;
+  border: 1px solid transparent;
 }
-.loginButton:hover{
-    border: 1px solid #0062ff;
-    background-color: #FFFFFF;
-    color: #0062ff;
+.loginButton:hover {
+  border: 1px solid #0062ff;
+  background-color: #ffffff;
+  color: #0062ff;
 }
 .forgetPasswordLink {
   float: right;
@@ -124,8 +124,8 @@
   font-size: 14px;
   font-weight: bold;
 }
-.socialAccountCard:hover{
-    border: 1px solid #0062ff;
+.socialAccountCard:hover {
+  border: 1px solid #0062ff;
 }
 .signUpLinkPara {
   margin-top: 40px;

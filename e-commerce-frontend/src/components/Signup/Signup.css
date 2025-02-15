@@ -1,33 +1,33 @@
-.signupPageImage{
-    position: absolute;
-    right: 0;
-    top: 0;
-    min-width: 100vh;
-    width: 100%;
-    height: 100vh;
-    object-fit: contain;
-    object-position: right center;
+.signupPageImage {
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-width: 100vh;
+  width: 100%;
+  height: 100vh;
+  object-fit: contain;
+  object-position: right center;
 }
-.signupFormWrapper{
-    position: absolute;
-    margin-left: 128px;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
-    height: 100vh;
+.signupFormWrapper {
+  position: absolute;
+  margin-left: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  height: 100vh;
 }
-.signupForm{
-    max-width: 403px;
-    width: 100%;
+.signupForm {
+  max-width: 403px;
+  width: 100%;
 }
-.signupHeading{
-    margin-bottom: 40px;
+.signupHeading {
+  margin-bottom: 40px;
 }
-.inputField{
-    margin: 0 0 20px 0;
+.inputField {
+  margin: 0 0 20px 0;
 }
-.signupButton{
+.signupButton {
   width: 100%;
   padding: 12px;
   margin: 24px 0 12px 0;
@@ -37,10 +37,19 @@
   color: #ffffff;
   font-size: 18px;
   border-radius: 8px;
-  border: 1px solid  transparent;
+  border: 1px solid transparent;
 }
-.signupButton:hover{
-    border: 1px solid #0062ff;
-    background-color: #FFFFFF;
-    color: #0062ff;
+.signupButton:hover {
+  border: 1px solid #0062ff;
+  background-color: #ffffff;
+  color: #0062ff;
+}
+.alreadyHaveAccountLink {
+  float: right;
+  color: #0062ff;
+  text-decoration: none;
+  font-size: 15px;
+}
+.alreadyHaveAccountLink:hover {
+  text-decoration: underline;
 }
