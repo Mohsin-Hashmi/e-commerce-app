@@ -54,3 +54,28 @@
     font-size: 16px;
     font-weight: bold;
 }
+
+.rangeSecWrapper{
+    padding: 56px 0;
+    text-align: center;
+}
+.rangeSecWrapper .rangeSecHeading{
+    font-size: 32px;
+    color: #333333;
+}
+.rangeSecPara{
+    color: #333333;
+}
+.rangeItems{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 62px;
+}
+.rangeItemLink{
+    text-decoration: none;
+}
+.ranfeItemsName{
+    font-size: 24px;
+    color: #333333;
+    font-weight:400;
+}
