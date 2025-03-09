@@ -1,0 +1,56 @@
+.bannerSec{
+    position: relative;
+    height: 950px;
+}
+.bannerSec::before{
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url('../../assets//images//banner-bg-img.webp');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-position: center;
+    z-index: -1;
+}
+
+.bannerSecWrapper{
+    max-width: 700px;
+    width: 100%;
+    height: 543px;
+    background-color: #FFF3E3;
+    position: absolute;
+    right: 60px;
+    top: 230px;
+    padding: 62px 43px 37px 39px;
+}
+
+.newArrivalPara{
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.collectionHeading{
+    font-size: 52px;
+    font-weight: bold;
+    color: #B88E2F;
+}
+.collectionPara{
+    font-size: 18px;
+    color: #333333;
+    font-weight: medium;
+    margin: 17px 0 46px 0;
+}
+
+.buyNowBtn{
+    padding: 25px 72px;
+    background-color: #B88E2F;
+    color: #FFFFFF;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
