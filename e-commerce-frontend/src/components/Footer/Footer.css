@@ -1,0 +1,61 @@
+.footer{
+    background-color: #D9D9D9;
+}
+.footerWrapper{
+    padding: 48px 0 38px 0;
+    display:flex;
+    column-gap: 136px;
+}
+.footerInfo{
+    max-width: 285px;
+    width: 100%;
+}
+.address,.location{
+    font-size: 16px;
+    color: #3A3A3A;
+}
+.address{
+    margin-top: 50px;
+    
+}
+.footerPagesLinks{
+    display: flex;
+    column-gap: 144px;
+}
+.footerPagesLinksHeading{
+    font-size: 16px;
+    font: medium;
+    color: #3A3A3A;
+    margin-bottom: 55px;
+}
+.footerPagesLinksOptions{
+    text-decoration: none;
+    display: block;
+    color: #000000;
+}
+.footerPagesLinks ul li{
+    margin-bottom: 46px;
+}
+.footerPagesLinks ul li:last-child{
+    margin-bottom: unset;
+}
+.footerPagesLinksOptions:hover{
+    color: #3A3A3A;
+}
+.emailInput{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding: 5px;
+    background-color: inherit;
+    font-size: 13px;
+}
+.subscribeBtn{
+    padding: 5px;
+    margin-left: 8px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000000;
+    background-color: inherit;
+    cursor: pointer;
+}
