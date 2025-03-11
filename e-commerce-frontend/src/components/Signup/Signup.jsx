@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 import { SignupAPI } from "../../services/SignupAPI";
 import googleLogo from "../../assets/images/google-logo.webp";
 import facebookLogo from "../../assets/images/fackbook-logo.webp";
+import { useDispatch } from "react-redux";
+import { addUser } from "../../utils/userSlice";
 const Signup = () => {
+  const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,8 +25,9 @@ const Signup = () => {
         confirmPassword,
         role,
       });
-      if (response.status === 200) {
+      if (response) {
         console.log("Signup Successfully:", response?.data);
+        dispatch(addUser(response?.data));
       }
       return response;
     } catch (err) {
@@ -86,14 +90,20 @@ const Signup = () => {
                 onChange={(e) => setRole(e.target.value)}
                 required
               >
-                <option className="options" value="">Select a role</option>
-                <option className="options" value="user">User</option>
-                <option className="options" value="admin">Admin</option>
+                <option className="options" value="">
+                  Select a role
+                </option>
+                <option className="options" value="user">
+                  User
+                </option>
+                <option className="options" value="admin">
+                  Admin
+                </option>
               </select>
               <button type="submit" className="signupButton">
                 Sign Up
               </button>
-              
+
               <div className="divider">
                 <span>or</span>
               </div>
