@@ -3,6 +3,7 @@ import itemOne from "../../assets/images/item01.webp";
 import itemTwo from "../../assets/images/item02.webp";
 import itemThree from "../../assets/images/item03.webp";
 import { Link } from "react-router-dom";
+import OurProducts from "../OurProducts/OurProducts";
 const Body = () => {
   return (
     <>
@@ -42,6 +43,12 @@ const Body = () => {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+      {/* Our Products Section*/}
+      <section className="ourProductsSec">
+        <div className="container">
+          <OurProducts />
         </div>
       </section>
     </>

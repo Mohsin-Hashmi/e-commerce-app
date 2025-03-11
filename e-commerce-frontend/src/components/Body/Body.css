@@ -1,81 +1,84 @@
-.bannerSec{
-    position: relative;
-    height: 950px;
+.bannerSec {
+  position: relative;
+  height: 950px;
 }
-.bannerSec::before{
-    content: '';
-    position: absolute;
-    background-repeat: no-repeat;
-    background-image: url('../../assets//images//banner-bg-img.webp');
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-position: center;
-    z-index: -1;
-}
-
-.bannerSecWrapper{
-    max-width: 700px;
-    width: 100%;
-    height: 543px;
-    background-color: #FFF3E3;
-    position: absolute;
-    right: 60px;
-    top: 230px;
-    padding: 62px 43px 37px 39px;
+.bannerSec::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-image: url("../../assets//images//banner-bg-img.webp");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-position: center;
+  z-index: -1;
 }
 
-.newArrivalPara{
-    margin-bottom: 4px;
-    font-size: 14px;
+.bannerSecWrapper {
+  max-width: 700px;
+  width: 100%;
+  height: 543px;
+  background-color: #fff3e3;
+  position: absolute;
+  right: 60px;
+  top: 230px;
+  padding: 62px 43px 37px 39px;
 }
 
-.collectionHeading{
-    font-size: 52px;
-    font-weight: bold;
-    color: #B88E2F;
-}
-.collectionPara{
-    font-size: 18px;
-    color: #333333;
-    font-weight: medium;
-    margin: 17px 0 46px 0;
+.newArrivalPara {
+  margin-bottom: 4px;
+  font-size: 14px;
 }
 
-.buyNowBtn{
-    padding: 25px 72px;
-    background-color: #B88E2F;
-    color: #FFFFFF;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
+.collectionHeading {
+  font-size: 52px;
+  font-weight: bold;
+  color: #b88e2f;
+}
+.collectionPara {
+  font-size: 18px;
+  color: #333333;
+  font-weight: medium;
+  margin: 17px 0 46px 0;
 }
 
-.rangeSecWrapper{
-    padding: 56px 0;
-    text-align: center;
+.buyNowBtn {
+  padding: 25px 72px;
+  background-color: #b88e2f;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
 }
-.rangeSecWrapper .rangeSecHeading{
-    font-size: 32px;
-    color: #333333;
+
+.rangeSecWrapper {
+  padding: 56px 0;
+  text-align: center;
 }
-.rangeSecPara{
-    color: #333333;
+.rangeSecWrapper .rangeSecHeading {
+  font-size: 32px;
+  color: #3a3a3a;
 }
-.rangeItems{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 62px;
+.rangeSecPara {
+  color: #333333;
 }
-.rangeItemLink{
-    text-decoration: none;
+.rangeItems {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 62px;
 }
-.ranfeItemsName{
-    font-size: 24px;
-    color: #333333;
-    font-weight:400;
+.rangeItemLink {
+  text-decoration: none;
+}
+.ranfeItemsName {
+  font-size: 24px;
+  color: #333333;
+  font-weight: 400;
+}
+.ourProductsSec {
+  padding: 0 0 69px 0;
 }
