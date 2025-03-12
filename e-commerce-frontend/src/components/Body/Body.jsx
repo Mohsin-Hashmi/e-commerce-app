@@ -4,6 +4,7 @@ import itemTwo from "../../assets/images/item02.webp";
 import itemThree from "../../assets/images/item03.webp";
 import { Link } from "react-router-dom";
 import OurProducts from "../OurProducts/OurProducts";
+import RoomInspiration from "../RoomInspiration/RoomInspiration";
 const Body = () => {
   return (
     <>
@@ -49,6 +50,12 @@ const Body = () => {
       <section className="ourProductsSec">
         <div className="container">
           <OurProducts />
+        </div>
+      </section>
+      {/* Room Inspiration Section */}
+      <section className="roomInspirationSec">
+        <div className="container">
+          <RoomInspiration />
         </div>
       </section>
     </>

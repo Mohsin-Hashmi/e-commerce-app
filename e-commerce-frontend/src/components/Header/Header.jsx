@@ -1,4 +1,4 @@
-import logo from "../../assets/images/3legant.webp";
+import logo from "../../assets/images/navbarLogo.webp";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import searchIcon from "../../assets/images/search 02.webp";

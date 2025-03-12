@@ -1,0 +1,30 @@
+.roomInspirationWrapper{
+    display: flex;
+    align-items: center;
+    column-gap: 42px;
+}
+.roomInspirationInfo{
+    max-width: 442px;
+    width: 100%;
+}
+.infoHeading{
+    font-size: 40px;
+    font:bold;
+    color: #3A3A3A;
+}
+.infoPara{
+    font-size: 16px;
+    color: #616161;
+    font: medium;
+    margin: 7px 0 25px;
+}
+.exploreMoreBtn{
+    width: 176px;
+    padding: 12px 36px;
+    font-size: 16px;
+    font:medium;
+    color: #FFFFFF;
+    background-color: #B88E2F;
+    display: block;
+    text-decoration: none;
+}

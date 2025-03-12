@@ -64,7 +64,10 @@ const Footer = () => {
                 <button  className="subscribeBtn">SUBSCRIBE</button>
               </div>
             </div>
+            
           </div>
+          <hr/>
+          <p className="crPara">2023 furino. All rights reverved</p>
         </div>
       </footer>
     </>
