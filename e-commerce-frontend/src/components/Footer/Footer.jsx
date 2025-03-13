@@ -21,16 +21,24 @@ const Footer = () => {
                 <h4 className="footerPagesLinksHeading">Links</h4>
                 <ul>
                   <li>
-                    <Link className="footerPagesLinksOptions">Home</Link>
+                    <Link to="" className="footerPagesLinksOptions">
+                      Home
+                    </Link>
                   </li>
                   <li>
-                    <Link className="footerPagesLinksOptions">Shop</Link>
+                    <Link to="" className="footerPagesLinksOptions">
+                      Shop
+                    </Link>
                   </li>
                   <li>
-                    <Link className="footerPagesLinksOptions">About</Link>
+                    <Link to="" className="footerPagesLinksOptions">
+                      About
+                    </Link>
                   </li>
                   <li>
-                    <Link className="footerPagesLinksOptions">Contact</Link>
+                    <Link to="/contact-us" className="footerPagesLinksOptions">
+                      Contact
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -61,12 +69,11 @@ const Footer = () => {
                   placeholder="Enter Your Email Address"
                   required
                 />
-                <button  className="subscribeBtn">SUBSCRIBE</button>
+                <button className="subscribeBtn">SUBSCRIBE</button>
               </div>
             </div>
-            
           </div>
-          <hr/>
+          <hr />
           <p className="crPara">2023 furino. All rights reverved</p>
         </div>
       </footer>

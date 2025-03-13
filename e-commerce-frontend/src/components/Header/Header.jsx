@@ -10,21 +10,21 @@ const Header = () => {
       <header className="header">
         <div className="container">
           <nav className="headerNavbar">
-            <Link>
+            <Link to='/'>
               <img src={logo} alt="logo icon" />
             </Link>
             <ul className="headerNavbarOptions">
               <li>
-                <Link className="navbarLinks">Home</Link>
+                <Link to='/' className="navbarLinks">Home</Link>
               </li>
               <li>
-                <Link className="navbarLinks">Shop</Link>
+                <Link to='' className="navbarLinks">Shop</Link>
               </li>
               <li>
-                <Link className="navbarLinks">Product</Link>
+                <Link to='' className="navbarLinks">Product</Link>
               </li>
               <li>
-                <Link className="navbarLinks">Contact Us</Link>
+                <Link to='/contact-us' className="navbarLinks">Contact Us</Link>
               </li>
             </ul>
             <div className="headerNavbarLogs">
