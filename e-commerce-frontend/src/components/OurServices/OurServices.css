@@ -1,0 +1,25 @@
+.serviceSec{
+    background-color: #FAF3EA;
+    margin-bottom: 30px;
+  }
+  .serviceSecWrapper{
+    padding: 100px 0;
+    display: flex;
+    column-gap: 48px;
+  }
+  .serviceCard{
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  .serviceCardContent h4{
+    font-size: 22px;
+    color: #242424;
+    font: medium;
+  }
+  .serviceCardContent p{
+    font-size: 14px;
+    color: #898989;
+    font: medium;
+  }

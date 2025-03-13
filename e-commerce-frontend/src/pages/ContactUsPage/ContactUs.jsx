@@ -5,10 +5,7 @@ import bannerLogo from "../../assets/images/Meubel House_Logos-05.webp";
 import locationIcon from "../../assets/images/locationIcon.webp";
 import phoneIcon from "../../assets/images/cellPhoneIcon.webp";
 import clockIcon from "../../assets/images/timeClockIcon.webp";
-import trophy from "../../assets/images/trophy.webp";
-import protectionIcon from "../../assets/images/guarantee.webp"
-import shippingIcon from "../../assets/images/shipping.webp";
-import supportIcon from "../../assets/images/customer-support.webp";
+import OurServices from "../../components/OurServices/OurServices";
 const ContactUs = () => {
   return (
     <>
@@ -75,58 +72,45 @@ const ContactUs = () => {
               <div className="formContainer">
                 <form action="">
                   <div className="formInputField">
-                    <label className="fieldLabel" htmlFor="">Your name</label>
-                    <input className="fieldInput" type="text" placeholder="Your Name"/>
+                    <label className="fieldLabel" htmlFor="">
+                      Your name
+                    </label>
+                    <input
+                      className="fieldInput"
+                      type="text"
+                      placeholder="Your Name"
+                    />
                   </div>
                   <div className="formInputField">
-                    <label className="fieldLabel" htmlFor="">Email address</label>
-                    <input className="fieldInput" type="email" placeholder="your-email@gmail.com" />
+                    <label className="fieldLabel" htmlFor="">
+                      Email address
+                    </label>
+                    <input
+                      className="fieldInput"
+                      type="email"
+                      placeholder="your-email@gmail.com"
+                    />
                   </div>
                   <div className="formInputField">
-                    <label className="fieldLabel" htmlFor="">Message</label>
-                    <input className="fieldInput messageInput" type="text" placeholder="Hi! i’d like to ask about" />
+                    <label className="fieldLabel" htmlFor="">
+                      Message
+                    </label>
+                    <input
+                      className="fieldInput messageInput"
+                      type="text"
+                      placeholder="Hi! i’d like to ask about"
+                    />
                   </div>
-                  <button type="submit" className="submitBtn">Submit</button>
+                  <button type="submit" className="submitBtn">
+                    Submit
+                  </button>
                 </form>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="serviceSec">
-        <div className="container">
-          <div className="serviceSecWrapper">
-            <div className="serviceCard">
-              <img src={trophy} alt="trophy icon" />
-              <div className="serviceCardContent">
-                <h4>High Quality</h4>
-                <p>crafted from top materials</p>
-              </div>
-            </div>
-            <div className="serviceCard">
-              <img src={protectionIcon} alt="trophy icon" />
-              <div className="serviceCardContent">
-                <h4>Warranty Protection</h4>
-                <p>Over 2 years</p>
-              </div>
-            </div>
-            <div className="serviceCard">
-              <img src={shippingIcon} alt="trophy icon" />
-              <div className="serviceCardContent">
-                <h4>Free Shipping</h4>
-                <p>Order over 150 $</p>
-              </div>
-            </div>
-            <div className="serviceCard">
-              <img src={supportIcon} alt="trophy icon" />
-              <div className="serviceCardContent">
-                <h4>24 / 7 Support</h4>
-                <p>Dedicated support</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <OurServices />
       <Footer />
     </>
   );

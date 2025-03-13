@@ -1,7 +1,6 @@
 .contactUsSec {
   position: relative;
   height: 316px;
- 
 }
 .contactUsSec::after {
   content: "";
@@ -24,7 +23,6 @@
   max-width: 271px;
   width: 100%;
   margin: 0 auto;
-  
 }
 .contactUsHeading {
   font-size: 48px;
@@ -60,30 +58,30 @@
   font-size: 16px;
   font: medium;
 }
-.contactFormWrapper{
-    padding: 98px 0 63px;
-    text-align: center;
+.contactFormWrapper {
+  padding: 98px 0 63px;
+  text-align: center;
 }
-.contactFromHeading{
-    font-size: 36px;
-    font: medium;
-    color:#000000;
+.contactFromHeading {
+  font-size: 36px;
+  font: medium;
+  color: #000000;
 }
-.contactUsFormPara{
-    font-size: 16px;
-    color: #9F9F9F;
-    margin-top: 14px;
-    width: 644px;
-    margin: 0 auto;
+.contactUsFormPara {
+  font-size: 16px;
+  color: #9f9f9f;
+  margin-top: 14px;
+  width: 644px;
+  margin: 0 auto;
 }
 
-.contactForm{
+.contactForm {
   display: flex;
   column-gap: 30px;
   align-items: center;
   margin-top: 82px;
 }
-.contactFormInfo{
+.contactFormInfo {
   max-width: 393px;
   width: 100%;
   padding: 58px 75px 71px 46px;
@@ -91,81 +89,54 @@
   flex-wrap: wrap;
   row-gap: 42px;
 }
-.infoCard{
+.infoCard {
   display: flex;
   column-gap: 30px;
   align-items: start;
-  
 }
-.infoCardText{
+.infoCardText {
   text-align: start;
 }
-.infoIcon{
+.infoIcon {
   width: 30px;
   height: 27px;
 }
-.formContainer{
+.formContainer {
   max-width: 635px;
   width: 100%;
 }
-.formInputField{
+.formInputField {
   display: flex;
   flex-wrap: wrap;
-  
 }
-.fieldLabel{
+.fieldLabel {
   font-size: 16px;
   font: medium;
   color: #000000;
   margin-bottom: 22px;
 }
-.fieldInput{
+.fieldInput {
   width: 100%;
   padding: 25px 0 25px 35px;
   outline: none;
-  border: 1px solid #9F9F9F;
+  border: 1px solid #9f9f9f;
   border-radius: 10px;
 }
-.fieldInput:nth-child(-n+2){
+.fieldInput:nth-child(-n + 2) {
   margin-bottom: 36px;
 }
-.messageInput{
+.messageInput {
   padding-bottom: 70px;
 }
 
-.submitBtn{
+.submitBtn {
   float: left;
   padding: 14px 89px;
   outline: none;
-  background-color: #B88E2F;
+  background-color: #b88e2f;
   border: none;
   border-radius: 5px;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   font-size: 16px;
-}
-.serviceSec{
-  background-color: #FAF3EA;
-  margin-bottom: 30px;
-}
-.serviceSecWrapper{
-  padding: 100px 0;
-  display: flex;
-  column-gap: 48px;
-}
-.serviceCard{
-  display: flex;
-  column-gap: 10px;
-  align-items: center;
-  justify-content: center;
-}
-.serviceCardContent h4{
-  font-size: 22px;
-  color: #242424;
-  font: medium;
-}
-.serviceCardContent p{
-  font-size: 14px;
-  color: #898989;
-  font: medium;
 }
