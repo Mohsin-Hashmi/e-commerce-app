@@ -76,3 +76,96 @@
     width: 644px;
     margin: 0 auto;
 }
+
+.contactForm{
+  display: flex;
+  column-gap: 30px;
+  align-items: center;
+  margin-top: 82px;
+}
+.contactFormInfo{
+  max-width: 393px;
+  width: 100%;
+  padding: 58px 75px 71px 46px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 42px;
+}
+.infoCard{
+  display: flex;
+  column-gap: 30px;
+  align-items: start;
+  
+}
+.infoCardText{
+  text-align: start;
+}
+.infoIcon{
+  width: 30px;
+  height: 27px;
+}
+.formContainer{
+  max-width: 635px;
+  width: 100%;
+}
+.formInputField{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.fieldLabel{
+  font-size: 16px;
+  font: medium;
+  color: #000000;
+  margin-bottom: 22px;
+}
+.fieldInput{
+  width: 100%;
+  padding: 25px 0 25px 35px;
+  outline: none;
+  border: 1px solid #9F9F9F;
+  border-radius: 10px;
+}
+.fieldInput:nth-child(-n+2){
+  margin-bottom: 36px;
+}
+.messageInput{
+  padding-bottom: 70px;
+}
+
+.submitBtn{
+  float: left;
+  padding: 14px 89px;
+  outline: none;
+  background-color: #B88E2F;
+  border: none;
+  border-radius: 5px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 16px;
+}
+.serviceSec{
+  background-color: #FAF3EA;
+  margin-bottom: 30px;
+}
+.serviceSecWrapper{
+  padding: 100px 0;
+  display: flex;
+  column-gap: 48px;
+}
+.serviceCard{
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.serviceCardContent h4{
+  font-size: 22px;
+  color: #242424;
+  font: medium;
+}
+.serviceCardContent p{
+  font-size: 14px;
+  color: #898989;
+  font: medium;
+}
