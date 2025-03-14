@@ -6,9 +6,11 @@ import { SignupAPI } from "../../services/SignupAPI";
 import googleLogo from "../../assets/images/google-logo.webp";
 import facebookLogo from "../../assets/images/fackbook-logo.webp";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { addUser } from "../../utils/userSlice";
 const Signup = () => {
   const dispatch = useDispatch();
+  const navigate= useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,11 +27,8 @@ const Signup = () => {
         confirmPassword,
         role,
       });
-      if (response) {
-        console.log("Signup Successfully:", response?.data);
-        dispatch(addUser(response?.data));
-      }
-      return response;
+      dispatch(addUser(response?.data));
+      navigate('/login');
     } catch (err) {
       console.log(err);
     }

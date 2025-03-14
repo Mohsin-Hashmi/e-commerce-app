@@ -4,8 +4,13 @@ import { useState } from "react";
 import googleLogo from "../../assets/images/google-logo.webp";
 import facebookLogo from "../../assets/images/fackbook-logo.webp";
 import { LoginAPI } from "../../services/LoginAPI";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import { addUser } from "../../utils/userSlice";
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [email, setEmail]= useState('');
   const [password, setPassword]= useState('');
 
@@ -13,9 +18,8 @@ const Login = () => {
     e.preventDefault();
     try{
       const response = await LoginAPI({email, password});
-      if(response.status===200){
-        console.log("Login successful:", response.data);
-      }
+      dispatch(addUser(response?.data));
+      navigate('/');
     }catch(err){
       console.log(err);
     }

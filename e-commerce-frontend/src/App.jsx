@@ -5,6 +5,7 @@ import Layout from "./components/Layout/Layout";
 import ContactUs from "./pages/ContactUsPage/ContactUs";
 import appStore from "./utils/appStore";
 import { Provider } from "react-redux";
+import ProdectedRoute from "./utils/ProtectedRoute";
 function App() {
   return (
     <>
@@ -12,10 +13,26 @@ function App() {
         <BrowserRouter>
           <Routes>
             {/* public routes */}
-            <Route path="/" element={<Layout />}></Route>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/contact-us" element={<ContactUs />} />
+            {/* Protected routes */}
+            <Route
+              path="/"
+              element={
+                <ProdectedRoute>
+                  <Layout />
+                </ProdectedRoute>
+              }
+            ></Route>
+
+            <Route
+              path="/contact-us"
+              element={
+                <ProdectedRoute>
+                  <ContactUs />
+                </ProdectedRoute>
+              }
+            />
           </Routes>
         </BrowserRouter>
       </Provider>
