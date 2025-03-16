@@ -7,7 +7,7 @@ export const SignupAPI = async ({ name, email, password, confirmPassword, role }
       { name, email, password, confirmPassword, role },
       { withCredentials: true }
     );
-    return response.data;
+    return response;
   } catch (err) {
     console.error(err.response?.data || err.message);
     throw err;

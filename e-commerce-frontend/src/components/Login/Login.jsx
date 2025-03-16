@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     try{
       const response = await LoginAPI({email, password});
-      dispatch(addUser(response?.data));
+      dispatch(addUser(response.data));
       navigate('/');
     }catch(err){
       console.log(err);

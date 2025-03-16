@@ -145,7 +145,7 @@ const OurProducts = () => {
           </Link>
         </div>
       </div>
-      <Link to='' className="showMoreBtn">
+      <Link to='/products' className="showMoreBtn">
       Show More
       </Link>
     </>
