@@ -6,7 +6,25 @@ import locationIcon from "../../assets/images/locationIcon.webp";
 import phoneIcon from "../../assets/images/cellPhoneIcon.webp";
 import clockIcon from "../../assets/images/timeClockIcon.webp";
 import OurServices from "../../components/OurServices/OurServices";
+import { useState } from "react";
+import ContactUsAPI from "../../services/ContactUsAPI";
 const ContactUs = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await ContactUsAPI({ name, email, message });
+      alert("Your message has been send successfully");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <>
       <Header />
@@ -70,7 +88,7 @@ const ContactUs = () => {
                 </div>
               </div>
               <div className="formContainer">
-                <form action="">
+                <form action="" onSubmit={handleSubmit}>
                   <div className="formInputField">
                     <label className="fieldLabel" htmlFor="">
                       Your name
@@ -78,7 +96,10 @@ const ContactUs = () => {
                     <input
                       className="fieldInput"
                       type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       placeholder="Your Name"
+                      required
                     />
                   </div>
                   <div className="formInputField">
@@ -88,7 +109,10 @@ const ContactUs = () => {
                     <input
                       className="fieldInput"
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="your-email@gmail.com"
+                      required
                     />
                   </div>
                   <div className="formInputField">
@@ -98,7 +122,10 @@ const ContactUs = () => {
                     <input
                       className="fieldInput messageInput"
                       type="text"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                       placeholder="Hi! i’d like to ask about"
+                      required
                     />
                   </div>
                   <button type="submit" className="submitBtn">

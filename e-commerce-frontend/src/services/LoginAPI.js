@@ -9,7 +9,6 @@ export const LoginAPI = async ({ email, password }) => {
     );
     return response;
   } catch (err) {
-    console.error(err.response?.data || err.message);
-    throw err;
+    throw new Error(err.response?.data || err.message)
   }
 };

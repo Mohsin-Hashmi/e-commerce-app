@@ -3,6 +3,7 @@ const app = express();
 const connectDB = require("./config/db-connection");
 const authRouter = require("./routes/auth");
 const productRouter = require("./routes/product");
+const contactRouter = require("./routes/contact-us");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -18,6 +19,7 @@ app.use(cors({
 }));
 app.use('/', authRouter);
 app.use('/', productRouter);
+app.use('/', contactRouter);
 
 connectDB()
   .then(() => {

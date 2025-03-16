@@ -1,8 +1,8 @@
 const validater = require("validator");
 
 const validateUser = (req) => {
-  const { name, email, password, confirmPassword, role } = req.body;
-  if (!name || !email || !password || !confirmPassword || !role ||!message) {
+  const { name, email, password, confirmPassword, role, message } = req.body;
+  if (!name || !email || !password || !confirmPassword || !role || !message) {
     throw new Error("All fields are required");
   } else if (!validater.isEmail(email)) {
     throw new Error("Email is invalid");
@@ -13,6 +13,16 @@ const validateUser = (req) => {
   }
 };
 
+const validateContactUsUser= (req)=>{
+  const { name, email, message } = req.body;
+  if (!name || !email || !message) {
+    throw new Error("All fields are required");
+  } else if (!validater.isEmail(email)) {
+    throw new Error("Email is invalid");
+  }else if(message.length>=30){
+    throw new Error("Message is too long");
+  }
+}
 const validateLoginUser = (req) => {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -36,4 +46,4 @@ const validateProductFields = (req) => {
   const isEditAllowed = Object.keys(req.body).every((field) => editAbleData.includes(field));
   return isEditAllowed;
 }
-module.exports = { validateUser, validateLoginUser, validateProduct, validateProductFields };
+module.exports = { validateUser, validateLoginUser, validateContactUsUser, validateProduct, validateProductFields };
