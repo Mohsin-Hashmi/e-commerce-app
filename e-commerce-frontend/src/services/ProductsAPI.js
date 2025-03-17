@@ -1,5 +1,4 @@
 
-
 const ProductsAPI = async () => {
 
     try {

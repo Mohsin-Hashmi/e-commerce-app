@@ -6,8 +6,13 @@ import cardImageFour from "../../assets/images/card4img.webp";
 import cardImageFive from "../../assets/images/card5img.webp";
 import cardImageSix from "../../assets/images/card6img.webp";
 import cardImageSeven from "../../assets/images/card7img.webp";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 const OurProducts = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   return (
     <>
       <h1 className="ourProductsHeading">Our Products</h1>

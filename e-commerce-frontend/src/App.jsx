@@ -23,7 +23,7 @@ function App() {
 
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/products" element={<Product />} />
-            <Route path="/products-detail" element={<ProductDetail />} />
+            <Route path="/products-detail/:id" element={<ProductDetail />} />
           </Routes>
         </BrowserRouter>
       </Provider>

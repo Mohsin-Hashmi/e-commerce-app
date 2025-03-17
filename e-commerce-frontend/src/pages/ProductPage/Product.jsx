@@ -46,7 +46,7 @@ const Product = () => {
             {products && products.length > 0 ? (
               products.map((product) => (
                 <div key={product.id} className="productCard">
-                  <Link to="/products-detail" className="productCardLink">
+                  <Link to={`/products-detail/${product.id}`} className="productCardLink">
                     <img
                       src={product.image_path}
                       alt={product.name}
