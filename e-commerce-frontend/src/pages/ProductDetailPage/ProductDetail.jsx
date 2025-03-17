@@ -5,14 +5,15 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import "./ProductDetail.css";
+import OurServices from "../../components/OurServices/OurServices";
 const ProductDetail = () => {
   const { id } = useParams();
   const products = useSelector((state) => state.products);
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   if (!products || products.length === 0) {
     return <p>Loading products...</p>; // Handle empty state
   }
@@ -21,6 +22,10 @@ const ProductDetail = () => {
     return <p>Product not found!</p>;
   }
 
+  const relatedProducts = products.filter(
+    (p) => p.category === product.category && p.id !== product.id
+  );
+  
   return (
     <>
       <Header />
@@ -34,15 +39,47 @@ const ProductDetail = () => {
             />
             <div>
               <h2 className="selectedProductName">{product.name}</h2>
-              <p className="selectedProductDescription">{product.description}</p>
-              <p className="selectedProductWoodType">Wood Type: {product.wood_type}</p>
+              <p className="selectedProductDescription">
+                {product.description}
+              </p>
+              <p className="selectedProductWoodType">
+                Wood Type: {product.wood_type}
+              </p>
               <p className="selectedProductPrice">Price: ${product.price}</p>
-              <Link to='' className="addToCartBtn">Add to Cart</Link>
+              <Link to="" className="addToCartBtn">
+                Add to Cart
+              </Link>
             </div>
           </div>
-          <Link to='/products' className="backBtn">Back</Link>
+          
+          {relatedProducts.length > 0 && (
+            <div className="relatedProducts">
+              <h3>Related Products</h3>
+              <div className="relatedProductList">
+                {relatedProducts.map((related) => (
+                  <div key={related.id} className="relatedProductCard">
+                    <Link to={`/products-detail/${related.id}`} className="relatedProductLink">
+                      <img
+                        src={related.image_path}
+                        alt={related.name}
+                        className="relatedProductImage"
+                      />
+                      <div className="relatedProductDetail">
+                        <h4>{related.name}</h4>
+                        <p>${related.price}</p>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          <Link to="/products" className="backBtn">
+            Back
+          </Link>
         </div>
       </section>
+      <OurServices/>
       <Footer />
     </>
   );

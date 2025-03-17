@@ -4,7 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import bannerLogo from "../../assets/images/Meubel House_Logos-05.webp";
 import ProductsAPI from "../../services/ProductsAPI";
 import { Link } from "react-router-dom";
-
+import OurServices from "../../components/OurServices/OurServices";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../../utils/productSlice";
 import { useEffect } from "react";
@@ -66,6 +66,7 @@ const Product = () => {
           <Link className="shoeMoreBtn02">Show More</Link>
         </div>
       </section>
+      <OurServices/>
       <Footer />
     </>
   );
