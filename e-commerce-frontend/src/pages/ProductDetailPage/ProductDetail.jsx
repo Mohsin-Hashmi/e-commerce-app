@@ -46,7 +46,7 @@ const ProductDetail = () => {
                 Wood Type: {product.wood_type}
               </p>
               <p className="selectedProductPrice">Price: ${product.price}</p>
-              <Link to="" className="addToCartBtn">
+              <Link to="/cart" className="addToCartBtn">
                 Add to Cart
               </Link>
             </div>
