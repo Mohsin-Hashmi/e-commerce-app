@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../../utils/productSlice";
 import { useEffect } from "react";
 
+
 const Product = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
@@ -23,6 +24,7 @@ const Product = () => {
   useEffect(() => {
     handleProducts();
   }, []);
+  
   return (
     <>
       <Header />
@@ -44,7 +46,7 @@ const Product = () => {
             {products && products.length > 0 ? (
               products.map((product) => (
                 <div key={product.id} className="productCard">
-                  <Link to="" className="productCardLink">
+                  <Link to="/products-detail" className="productCardLink">
                     <img
                       src={product.image_path}
                       alt={product.name}

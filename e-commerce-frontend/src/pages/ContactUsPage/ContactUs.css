@@ -1,6 +1,7 @@
 .contactUsSec {
   position: relative;
   height: 316px;
+  display: block;
 }
 .contactUsSec::after {
   content: "";

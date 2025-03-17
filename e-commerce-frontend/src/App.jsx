@@ -6,6 +6,7 @@ import ContactUs from "./pages/ContactUsPage/ContactUs";
 import Product from "./pages/ProductPage/Product";
 import appStore from "./utils/appStore";
 import { Provider } from "react-redux";
+import ProductDetail from "./pages/ProductDetailPage/ProductDetail";
 // import ProdectedRoute from "./context/ProtectedRoute";
 // import { AuthProvider } from "./context/AuthContext";
 function App() {
@@ -22,6 +23,7 @@ function App() {
 
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/products" element={<Product />} />
+            <Route path="/products-detail" element={<ProductDetail />} />
           </Routes>
         </BrowserRouter>
       </Provider>
