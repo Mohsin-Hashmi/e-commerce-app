@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import "./ProductDetail.css";
 import OurServices from "../../components/OurServices/OurServices";
+import Loading from "../../components/Loading/Loading"
 const ProductDetail = () => {
   const { id } = useParams();
   const products = useSelector((state) => state.products);
@@ -15,7 +16,7 @@ const ProductDetail = () => {
   }, []);
 
   if (!products || products.length === 0) {
-    return <p>Loading products...</p>; // Handle empty state
+    return <Loading/> // Handle empty state
   }
   const product = products.find((item) => item.id.toString() === id); // Convert id to string
   if (!product) {

@@ -140,4 +140,11 @@
   color: #ffffff;
   cursor: pointer;
   font-size: 16px;
+  border: 1px solid transparent;
+}
+
+.submitBtn:hover{
+  border: 1px solid #b88e2f;
+  background-color: #ffffff;
+  color: #b88e2f;
 }

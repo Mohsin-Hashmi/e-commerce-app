@@ -1,0 +1,58 @@
+.shimmerGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .shimmerCard {
+    width: 302px;
+    height: 377px;
+    background: #f6f7f8;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+  }
+  
+  .shimmerImage {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 10px;
+  }
+  
+  .shimmerDetail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .shimmerTitle,
+  .shimmerPrice {
+    height: 20px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 5px;
+  }
+  
+  .shimmerTitle {
+    width: 80%;
+  }
+  
+  .shimmerPrice {
+    width: 50%;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  

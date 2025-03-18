@@ -7,31 +7,36 @@ import { Link } from "react-router-dom";
 import OurServices from "../../components/OurServices/OurServices";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../../utils/productSlice";
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
+import Loading from "../../components/Loading/Loading";
 
 const Product = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
+  const [loading, setLoading] = useState(true);
+
   const handleProducts = async () => {
     try {
       const response = await ProductsAPI();
       dispatch(addProduct(response?.data));
+      setLoading(false); // Stop loading after data fetch
     } catch (err) {
       console.log(err);
+      setLoading(false);
     }
   };
+
   useEffect(() => {
     handleProducts();
   }, []);
-  
+
   return (
     <>
       <Header />
       <section className="contactUsSec">
         <div className="container">
           <div className="contactUsSecWrapper">
-            <img src={bannerLogo} alt="benner Logo" />
+            <img src={bannerLogo} alt="banner Logo" />
             <h3 className="contactUsHeading">Products</h3>
           </div>
           <div className="contactUsPara">
@@ -43,7 +48,9 @@ const Product = () => {
       <section className="productsSec">
         <div className="container">
           <div className="productSecWrapper">
-            {products && products.length > 0 ? (
+            {loading ? (
+              <Loading />
+            ) : products && products.length > 0 ? (
               products.map((product) => (
                 <div key={product.id} className="productCard">
                   <Link to={`/products-detail/${product.id}`} className="productCardLink">
@@ -60,13 +67,13 @@ const Product = () => {
                 </div>
               ))
             ) : (
-              <p>Loading products...</p>
+              <p>No products found</p>
             )}
           </div>
           <Link className="shoeMoreBtn02">Show More</Link>
         </div>
       </section>
-      <OurServices/>
+      <OurServices />
       <Footer />
     </>
   );
