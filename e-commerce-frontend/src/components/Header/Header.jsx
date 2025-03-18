@@ -34,7 +34,7 @@ const Header = () => {
               <Link>
                 <img src={profile} alt="profile icon" />
               </Link>
-              <Link>
+              <Link to='/cart'>
                 <img src={cart} alt="cart icon" />
               </Link>
             </div>
