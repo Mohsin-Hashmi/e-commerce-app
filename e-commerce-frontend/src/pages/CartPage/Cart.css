@@ -1,0 +1,14 @@
+
+.cartTable{
+    width: 100%;
+    
+}
+.cartProductImage{
+    width: 150px;
+    border-radius: 10px;
+}
+.emptyCartImage{
+    margin: 80px auto 0 auto;
+    display: block;
+    mix-blend-mode: multiply;
+}

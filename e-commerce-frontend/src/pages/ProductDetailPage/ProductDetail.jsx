@@ -6,8 +6,11 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import "./ProductDetail.css";
 import OurServices from "../../components/OurServices/OurServices";
-import Loading from "../../components/Loading/Loading"
+import Loading from "../../components/Loading/Loading";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../utils/cartSlice";
 const ProductDetail = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const products = useSelector((state) => state.products);
 
@@ -16,7 +19,7 @@ const ProductDetail = () => {
   }, []);
 
   if (!products || products.length === 0) {
-    return <Loading/> // Handle empty state
+    return <Loading />; // Handle empty state
   }
   const product = products.find((item) => item.id.toString() === id); // Convert id to string
   if (!product) {
@@ -26,7 +29,7 @@ const ProductDetail = () => {
   const relatedProducts = products.filter(
     (p) => p.category === product.category && p.id !== product.id
   );
-  
+
   return (
     <>
       <Header />
@@ -47,19 +50,26 @@ const ProductDetail = () => {
                 Wood Type: {product.wood_type}
               </p>
               <p className="selectedProductPrice">Price: ${product.price}</p>
-              <Link to="/cart" className="addToCartBtn">
+              <Link
+                onClick={() => dispatch(addToCart(product))}
+                to="/cart"
+                className="addToCartBtn"
+              >
                 Add to Cart
               </Link>
             </div>
           </div>
-          
+
           {relatedProducts.length > 0 && (
             <div className="relatedProducts">
               <h3>Related Products</h3>
               <div className="relatedProductList">
                 {relatedProducts.map((related) => (
                   <div key={related.id} className="relatedProductCard">
-                    <Link to={`/products-detail/${related.id}`} className="relatedProductLink">
+                    <Link
+                      to={`/products-detail/${related.id}`}
+                      className="relatedProductLink"
+                    >
                       <img
                         src={related.image_path}
                         alt={related.name}
@@ -80,7 +90,7 @@ const ProductDetail = () => {
           </Link>
         </div>
       </section>
-      <OurServices/>
+      <OurServices />
       <Footer />
     </>
   );
