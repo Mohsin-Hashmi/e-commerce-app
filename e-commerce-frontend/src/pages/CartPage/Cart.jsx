@@ -61,7 +61,9 @@ const Cart = () => {
                         <td>{product.name}</td>
                         <td>{product.quantity}</td>
                         <td>${product.price}</td>
-                        <td onClick={() => dispatch(removeFromCart(product))}>
+                        <td
+                          onClick={() => dispatch(removeFromCart(product.id))}
+                        >
                           <img
                             style={{ cursor: "pointer" }}
                             src={deleteIcon}
@@ -72,6 +74,22 @@ const Cart = () => {
                     </tbody>
                   </table>
                 ))}
+                <section className="cartTotal">
+                  <div className="cartTotalWrapper">
+                    <h3 className="cartTotalHeading">Cart Totals</h3>
+                    <div className="cartTotalContent">
+                      <div className="cartTotalData">
+                        <p>Subtotal</p>
+                        <p>$190</p>
+                      </div>
+                      <div className="cartTotalData">
+                        <p>Total</p>
+                        <p>$190</p>
+                      </div>
+                    </div>
+                    <Link to='' className="checkOutButton">Check Out</Link>
+                  </div>
+                </section>
 
                 <button
                   className="clearCartBtn"
@@ -79,12 +97,15 @@ const Cart = () => {
                 >
                   Clear Cart
                 </button>
-                <Link className="backtoProductPageLink" to='/products'>Back to Products</Link>
               </>
             )}
+            <Link className="backtoProductPageLink" to="/products">
+              Back to Products
+            </Link>
           </div>
         </div>
       </section>
+
       <OurServices />
       <Footer />
     </>
