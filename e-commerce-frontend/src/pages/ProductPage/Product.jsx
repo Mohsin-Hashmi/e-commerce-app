@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../../utils/productSlice";
 import { useEffect, useState } from "react";
 import Loading from "../../components/Loading/Loading";
+import Banner from "../../components/Banner/Banner";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const Product = () => {
   return (
     <>
       <Header />
-     
+      <Banner image={bannerLogo} page="Products" home="Home" para="Products" />
       <section className="productsSec">
         <div className="container">
           <div className="productSecWrapper">
@@ -42,7 +43,10 @@ const Product = () => {
             ) : products && products.length > 0 ? (
               products.map((product) => (
                 <div key={product.id} className="productCard">
-                  <Link to={`/products-detail/${product.id}`} className="productCardLink">
+                  <Link
+                    to={`/products-detail/${product.id}`}
+                    className="productCardLink"
+                  >
                     <img
                       src={product.image_path}
                       alt={product.name}

@@ -8,6 +8,7 @@ import clockIcon from "../../assets/images/timeClockIcon.webp";
 import OurServices from "../../components/OurServices/OurServices";
 import { useState } from "react";
 import ContactUsAPI from "../../services/ContactUsAPI";
+import Banner from "../../components/Banner/Banner";
 const ContactUs = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -28,18 +29,7 @@ const ContactUs = () => {
   return (
     <>
       <Header />
-      <section className="contactUsSec">
-        <div className="container">
-          <div className="contactUsSecWrapper">
-            <img src={bannerLogo} alt="benner Logo" />
-            <h3 className="contactUsHeading">Contact Us</h3>
-          </div>
-          <div className="contactUsPara">
-            <p className="home">Home</p>
-            <p className="contact">Contact</p>
-          </div>
-        </div>
-      </section>
+      <Banner  image={bannerLogo} page="Contact Us" home="Home" para="Contact"/>
       <section className="contactFormSec">
         <div className="container">
           <div className="contactFormWrapper">

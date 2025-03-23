@@ -8,24 +8,14 @@ import deleteIcon from "../../assets/images/deleteItemIcon.webp";
 import bannerLogo from "../../assets/images/Meubel House_Logos-05.webp";
 import emptyCartImage from "../../assets/images/emptyCart.webp";
 import { Link } from "react-router-dom";
+import Banner from "../../components/Banner/Banner";
 const Cart = () => {
   const cartItems = useSelector((state) => state?.cart?.cartItems);
   const dispatch = useDispatch();
   return (
     <>
       <Header />
-      <section className="contactUsSec">
-        <div className="container">
-          <div className="contactUsSecWrapper">
-            <img src={bannerLogo} alt="benner Logo" />
-            <h3 className="contactUsHeading">Cart</h3>
-          </div>
-          <div className="contactUsPara">
-            <p className="home">Home</p>
-            <p className="contact">Cart</p>
-          </div>
-        </div>
-      </section>
+       <Banner  image={bannerLogo} page="Cart" home="Home" para="Cart"/>
       <section className="cartSection">
         <div className="container">
           <div className="cartSectionWrapper">

@@ -1,63 +1,60 @@
+.pageBannerSec {
+  position: relative;
+  height: 316px;
+  display: block;
+}
+.pageBannerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 271px;
+  width: 100%;
+  margin: 0 auto;
+}
+.pageBannerSec::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/images/pagesBanner.webp");
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+.bannerHeading {
+  font-size: 48px;
+  color: #000000;
+  font: medium;
+}
+.bannerPara {
+  display: flex;
+  justify-content: center;
+  column-gap: 32px;
+  position: relative;
+  width: 156px;
+  margin: 0 auto;
+}
 
-.bannerSec {
-    position: relative;
-    height: 316px;
-    display: block;
-  }
-.banenrWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 271px;
-    width: 100%;
-    margin: 0 auto;
-  }
-  .bannerHeading {
-    font-size: 48px;
-    color: #000000;
-    font: medium;
-  }
-  .bannerPara {
-    display: flex;
-    justify-content: center;
-    column-gap: 32px;
-  }
-  .bannerPara {
-    position: relative;
-    width: 145px;
-    margin: 0 auto;
-  }
-  .bannerPara::after {
-    content: "";
-    position: absolute;
-    background-repeat: no-repeat;
-    background-image: url("../../assets/images/arrow-right.webp");
-    width: 20px;
-    height: 20px;
-    top: 3px;
-    left: 55px;
-  }
-  .home {
-    font-size: 16px;
-    font: bold;
-    color: #000000;
-  }
-  .para {
-    font-size: 16px;
-    font: medium;
-  }
- 
-  .bannerSec::after {
-    content: "";
-    position: absolute;
-    background-repeat: no-repeat;
-    background-image: url("../../assets/images/pagesBanner.webp");
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-  }
+.bannerPara::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/images/arrow-right.webp");
+  width: 20px;
+  height: 20px;
+  top: 3px;
+  left: 55px;
+}
+.home {
+  font-size: 16px;
+  font: bold;
+  color: #000000;
+}
+.para {
+  font-size: 16px;
+  font: medium;
+}
