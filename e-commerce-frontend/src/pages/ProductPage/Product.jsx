@@ -33,18 +33,7 @@ const Product = () => {
   return (
     <>
       <Header />
-      <section className="contactUsSec">
-        <div className="container">
-          <div className="contactUsSecWrapper">
-            <img src={bannerLogo} alt="banner Logo" />
-            <h3 className="contactUsHeading">Products</h3>
-          </div>
-          <div className="contactUsPara">
-            <p className="home">Home</p>
-            <p className="contact">Product</p>
-          </div>
-        </div>
-      </section>
+     
       <section className="productsSec">
         <div className="container">
           <div className="productSecWrapper">
