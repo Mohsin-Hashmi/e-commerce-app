@@ -17,7 +17,7 @@ const Body = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
               tellus, luctus nec ullamcorper mattis.
             </p>
-            <button className="buyNowBtn">BUY NOW</button>
+            <Link to='/products' className="buyNowBtn">BUY NOW</Link>
           </div>
         </div>
       </section>
