@@ -77,7 +77,7 @@ const Cart = () => {
                         <p>$190</p>
                       </div>
                     </div>
-                    <Link to='' className="checkOutButton">Check Out</Link>
+                    <Link to='/check-out' className="checkOutButton">Check Out</Link>
                   </div>
                 </section>
 

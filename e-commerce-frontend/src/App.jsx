@@ -8,6 +8,7 @@ import appStore from "./utils/appStore";
 import { Provider } from "react-redux";
 import ProductDetail from "./pages/ProductDetailPage/ProductDetail";
 import Cart from "./pages/CartPage/Cart";
+import CheckOut from "./pages/CheckOutPage/CheckOut";
 // import ProdectedRoute from "./context/ProtectedRoute";
 // import { AuthProvider } from "./context/AuthContext";
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/products" element={<Product />} />
             <Route path="/products-detail/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/check-out" element={<CheckOut />}/>
           </Routes>
         </BrowserRouter>
       </Provider>
