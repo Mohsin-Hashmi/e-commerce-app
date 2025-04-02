@@ -49,3 +49,22 @@ span label{
     border: 1px solid #9F9F9F;
     font-size: 13px;
 }
+.subTotalWrap{
+    max-width: 544px;
+    width: 100%;
+    padding: 86px 36px;
+    
+}
+.subTotalWrap table{
+    width: 100%;
+    text-align: left;
+}
+.subTotalWrap table thead tr th{
+    font-size: 24px;
+    font-weight: 500;
+}
+.subTotalWrap table tbody tr td{
+    border: 1px solid black ;
+    border-collapse: collapse;
+    padding: 10px;
+} 

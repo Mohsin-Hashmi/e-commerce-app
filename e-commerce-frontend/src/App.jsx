@@ -22,7 +22,6 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             {/* Protected routes */}
             <Route path="/" element={<Layout />}></Route>
-
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/products" element={<Product />} />
             <Route path="/products-detail/:id" element={<ProductDetail />} />

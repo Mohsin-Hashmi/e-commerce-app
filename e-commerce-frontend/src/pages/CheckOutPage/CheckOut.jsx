@@ -2,10 +2,17 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import OurServices from "../../components/OurServices/OurServices";
 import "./CheckOut.css";
+import Banner from "../../components/Banner/Banner";
+import bannerLogo from "../../assets/images/Meubel House_Logos-05.webp";
+import { useSelector } from "react-redux";
+import emptyCartImage from "../../assets/images/emptyCart.webp";
 const CheckOut = () => {
+  const cartItem = useSelector((state) => state?.cart?.cartItems);
+  console.log(cartItem);
   return (
     <>
       <Header />
+      <Banner image={bannerLogo} page="Checkout" home="Home" para="Checkout" />
       <section className="checkOutSec">
         <div className="container">
           <div className="checkOutWrapper">
@@ -36,7 +43,29 @@ const CheckOut = () => {
                 </div>
               </form>
             </div>
-            <div></div>
+            <div className="subTotalWrap">
+              {cartItem.length === 0 ? (
+                <img src={emptyCartImage} alt="empty cart image" />
+              ) : (
+                <>
+                  <table >
+                      <thead>
+                        <tr>
+                          <th>Product</th>
+                          <th>Subtotal</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {cartItem.map((product)=>(
+                          <tr key={product.id}>
+                            <td>{product.name}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </section>
