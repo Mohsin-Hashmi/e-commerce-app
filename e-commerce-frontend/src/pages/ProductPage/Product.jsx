@@ -19,11 +19,11 @@ const Product = () => {
   const handleProducts = async () => {
     try {
       const response = await ProductsAPI();
-      dispatch(addProduct(response?.data));
+      dispatch(addProduct(response?.data)); // Add all the API response to reduc store.
       setLoading(false); // Stop loading after data fetch
     } catch (err) {
-      console.log(err);
       setLoading(false);
+      throw new Error("something went wrong ", err.message);
     }
   };
 

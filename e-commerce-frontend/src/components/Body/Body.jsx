@@ -5,6 +5,7 @@ import itemThree from "../../assets/images/item03.webp";
 import { Link } from "react-router-dom";
 import OurProducts from "../OurProducts/OurProducts";
 import RoomInspiration from "../RoomInspiration/RoomInspiration";
+import ImageGallery from "../ImageGallery/ImageGallery";
 const Body = () => {
   return (
     <>
@@ -56,6 +57,12 @@ const Body = () => {
       <section className="roomInspirationSec">
         <div className="container">
           <RoomInspiration />
+        </div>
+      </section>
+      {/* Image Gallery Section */}
+      <section className="imageGallerySec">
+        <div className="container">
+          <ImageGallery />
         </div>
       </section>
     </>
