@@ -9,19 +9,16 @@ import OurServices from "../../components/OurServices/OurServices";
 import Loading from "../../components/Loading/Loading";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../utils/cartSlice";
+
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const products = useSelector((state) => state.products);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const products = useSelector((store) => store.products);
 
   if (!products || products.length === 0) {
     return <Loading />; // Handle empty state
   }
-  const product = products.find((item) => item.id.toString() === id); // Convert id to string
+  const product = products.find((item) => item.id.toString() === id);
   if (!product) {
     return <p>Product not found!</p>;
   }

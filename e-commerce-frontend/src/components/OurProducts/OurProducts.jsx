@@ -1,14 +1,31 @@
 import "./OurProducts.css";
-import cardImageOne from "../../assets/images/card1img.webp";
-import cardImageTwo from "../../assets/images/card2img.webp";
-import cardImageThree from "../../assets/images/card3img.webp";
-import cardImageFour from "../../assets/images/card4img.webp";
-import cardImageFive from "../../assets/images/card5img.webp";
-import cardImageSix from "../../assets/images/card6img.webp";
-import cardImageSeven from "../../assets/images/card7img.webp";
+
 import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useSelector, useDispatch} from "react-redux";
+import { useEffect, useState } from "react";
+import ProductsAPI from "../../services/ProductsAPI";
+import Loading from "../Loading/Loading";
+import { addProduct } from "../../utils/productSlice";
 const OurProducts = () => {
+  const dispatch= useDispatch();
+  const [loading, setLoading] = useState(true);
+  const [productsData, setProductsData] = useState([]);
+  const handleProducts = async () => {
+    try {
+      const response = await ProductsAPI(0);
+      setProductsData(response); 
+      console.log("Products Data", response);
+      dispatch(addProduct(response));
+      setLoading(false); 
+    } catch (err) {
+      setLoading(false);
+      throw new Error("something went wrong ", err.message);
+    }
+  };
+  useEffect(() => {
+    handleProducts();
+  }, []);
+  console.log("Home", productsData);
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -16,7 +33,7 @@ const OurProducts = () => {
   return (
     <>
       <h1 className="ourProductsHeading">Our Products</h1>
-      <div className="ourProducts">
+      {/* <div className="ourProducts">
         <div className="ourProducrsCard">
           <Link to="" className="ourProductLink">
             <img className="productImage" src={cardImageOne} alt="item image" />
@@ -149,7 +166,38 @@ const OurProducts = () => {
             </div>
           </Link>
         </div>
-      </div>
+      </div> */}
+      <section className="productsSec">
+        <div className="container">
+          <div className="productSecWrapper">
+            {loading ? (
+              <Loading />
+            ) : productsData && productsData.length > 0 ? (
+              productsData.map((product) => (
+                <div key={product.id} className="productCard">
+                  <Link
+                    to={`/products-detail/${product.id}`}
+                    className="productCardLink"
+                  >
+                    <img
+                      src={product.image_path}
+                      alt={product.name}
+                      className="productImage"
+                    />
+                    <div className="productDetail">
+                      <h3 className="productTitle">{product.name}</h3>
+                      <p className="productPrice">${product.price}</p>
+                    </div>
+                  </Link>
+                </div>
+              ))
+            ) : (
+              <p>No products found</p>
+            )}
+          </div>
+          <Link className="shoeMoreBtn02">Show More</Link>
+        </div>
+      </section>
       <Link to='/products' className="showMoreBtn">
       Show More
       </Link>

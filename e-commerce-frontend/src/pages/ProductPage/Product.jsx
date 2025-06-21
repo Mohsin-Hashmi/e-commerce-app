@@ -13,20 +13,20 @@ import Banner from "../../components/Banner/Banner";
 
 const Product = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products);
   const [loading, setLoading] = useState(true);
-
+  const [productsData, setProductsData] = useState([]);
+  /**API Handler Function */
   const handleProducts = async () => {
     try {
-      const response = await ProductsAPI();
-      dispatch(addProduct(response?.data)); // Add all the API response to reduc store.
-      setLoading(false); // Stop loading after data fetch
+      const response = await ProductsAPI(24);
+      setProductsData(response); 
+      dispatch(addProduct(response));
+      setLoading(false); 
     } catch (err) {
       setLoading(false);
       throw new Error("something went wrong ", err.message);
     }
   };
-
   useEffect(() => {
     handleProducts();
   }, []);
@@ -40,8 +40,8 @@ const Product = () => {
           <div className="productSecWrapper">
             {loading ? (
               <Loading />
-            ) : products && products.length > 0 ? (
-              products.map((product) => (
+            ) : productsData && productsData.length > 0 ? (
+              productsData.map((product) => (
                 <div key={product.id} className="productCard">
                   <Link
                     to={`/products-detail/${product.id}`}

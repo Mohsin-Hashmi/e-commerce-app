@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import ProductDetail from "./pages/ProductDetailPage/ProductDetail";
 import Cart from "./pages/CartPage/Cart";
 import CheckOut from "./pages/CheckOutPage/CheckOut";
+import TopWindow from "./components/TopToWindow/TopWindow";
 // import ProdectedRoute from "./context/ProtectedRoute";
 // import { AuthProvider } from "./context/AuthContext";
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <>
       <Provider store={appStore}>
         <BrowserRouter>
+         <TopWindow />
           <Routes>
             {/* public routes */}
             <Route path="/login" element={<Login />} />
