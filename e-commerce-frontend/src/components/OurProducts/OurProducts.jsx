@@ -32,7 +32,7 @@ const OurProducts = () => {
   }, [location.pathname]);
   return (
     <>
-      <h1 className="ourProductsHeading">Our Products</h1>
+     
       {/* <div className="ourProducts">
         <div className="ourProducrsCard">
           <Link to="" className="ourProductLink">
@@ -168,6 +168,7 @@ const OurProducts = () => {
         </div>
       </div> */}
       <section className="productsSec">
+         <h1 className="ourProductsHeading">Our Products</h1>
         <div className="container">
           <div className="productSecWrapper">
             {loading ? (
@@ -195,12 +196,12 @@ const OurProducts = () => {
               <p>No products found</p>
             )}
           </div>
-          <Link className="shoeMoreBtn02">Show More</Link>
         </div>
-      </section>
-      <Link to='/products' className="showMoreBtn">
+         <Link to='/products' className="showMoreBtn">
       Show More
       </Link>
+      </section>
+     
     </>
   );
 };
