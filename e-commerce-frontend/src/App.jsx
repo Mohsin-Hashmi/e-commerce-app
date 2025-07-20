@@ -10,6 +10,7 @@ import ProductDetail from "./pages/ProductDetailPage/ProductDetail";
 import Cart from "./pages/CartPage/Cart";
 import CheckOut from "./pages/CheckOutPage/CheckOut";
 import TopWindow from "./components/TopToWindow/TopWindow";
+import Profile from "./pages/ProfilePage/Profile";
 // import ProdectedRoute from "./context/ProtectedRoute";
 // import { AuthProvider } from "./context/AuthContext";
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path="/products-detail/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/check-out" element={<CheckOut />}/>
+            <Route path='/profile' element= {<Profile />}/>
           </Routes>
         </BrowserRouter>
       </Provider>

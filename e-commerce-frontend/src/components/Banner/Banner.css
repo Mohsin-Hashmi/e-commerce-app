@@ -5,12 +5,13 @@
 }
 .pageBannerWrapper {
   display: flex;
+  flex-direction: column; /* Stack vertically */
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  max-width: 271px;
+  max-width: 400px;
   width: 100%;
   margin: 0 auto;
+  gap: 16px; /* Space between items */
 }
 .pageBannerSec::after {
   content: "";
@@ -25,36 +26,39 @@
   background-position: center;
   z-index: -1;
 }
+.bannerLogo {
+  width: 80px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 8px;
+}
+
 .bannerHeading {
   font-size: 48px;
-  color: #000000;
-  font: medium;
+  color: #3a3a3a;
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-align: center;
 }
+
 .bannerPara {
   display: flex;
   justify-content: center;
-  column-gap: 32px;
-  position: relative;
-  width: 156px;
+  align-items: center;
+  column-gap: 12px;
+  width: auto;
   margin: 0 auto;
+  font-size: 16px;
 }
 
-.bannerPara::after {
-  content: "";
-  position: absolute;
-  background-repeat: no-repeat;
-  background-image: url("../../assets/images/arrow-right.webp");
-  width: 20px;
-  height: 20px;
-  top: 3px;
-  left: 55px;
-}
-.home {
+.arrow {
   font-size: 16px;
-  font: bold;
   color: #000000;
+  font-weight: bold;
 }
-.para {
+
+.home, .para {
   font-size: 16px;
-  font: medium;
+  color: #000000;
+  font-weight: 500;
+  margin: 0;
 }

@@ -1,22 +1,22 @@
 import "./OurProducts.css";
 
 import { Link, useLocation } from "react-router-dom";
-import { useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import ProductsAPI from "../../services/ProductsAPI";
 import Loading from "../Loading/Loading";
 import { addProduct } from "../../utils/productSlice";
 const OurProducts = () => {
-  const dispatch= useDispatch();
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const [productsData, setProductsData] = useState([]);
   const handleProducts = async () => {
     try {
       const response = await ProductsAPI(0);
-      setProductsData(response); 
+      setProductsData(response);
       console.log("Products Data", response);
       dispatch(addProduct(response));
-      setLoading(false); 
+      setLoading(false);
     } catch (err) {
       setLoading(false);
       throw new Error("something went wrong ", err.message);
@@ -32,7 +32,6 @@ const OurProducts = () => {
   }, [location.pathname]);
   return (
     <>
-     
       {/* <div className="ourProducts">
         <div className="ourProducrsCard">
           <Link to="" className="ourProductLink">
@@ -168,7 +167,7 @@ const OurProducts = () => {
         </div>
       </div> */}
       <section className="productsSec">
-         <h1 className="ourProductsHeading">Our Products</h1>
+        <h1 className="ourProductsHeading">Our Products</h1>
         <div className="container">
           <div className="productSecWrapper">
             {loading ? (
@@ -197,11 +196,10 @@ const OurProducts = () => {
             )}
           </div>
         </div>
-         <Link to='/products' className="showMoreBtn">
-      Show More
-      </Link>
+        <Link to="/products" className="showMoreBtn">
+          Show More
+        </Link>
       </section>
-     
     </>
   );
 };
