@@ -12,12 +12,12 @@ const Profile = () => {
     phone: "",
   });
   const [edit, setEdit] = useState(false);
+  const [profileImage, setProfileImage] = useState(null);
 
-
-  const handleEditFunction = ()=>{
+  const handleEditFunction = () => {
     //API CALL
-    setEdit(true)
-  }
+    setEdit(true);
+  };
   return (
     <>
       <Header />
@@ -25,7 +25,6 @@ const Profile = () => {
       <section className="profileSec">
         <div className="container">
           <div className="profileWrapper">
-            
             <h2 className="createProfileHeading">
               {edit ? "Edit Profile" : "Create Profile"}
             </h2>
@@ -45,6 +44,26 @@ const Profile = () => {
                     placeholder="Mohsin Hashmi"
                     required
                   />
+                </div>
+                <div className="formGroup">
+                  <label htmlFor="profileImage">Profile Image</label>
+                  <input
+                    type="file"
+                    id="profileImage"
+                    name="profileImage"
+                    accept="image/*"
+                    value={profileImage}
+                    onChange={(e) => setProfileImage(e.target.value)}
+                    placeholder="Mohsin Hashmi"
+                    required
+                  />
+                  {profileImage && (
+                    <img
+                      src={URL.createObjectURL(profileImage)}
+                      alt="Profile Preview"
+                      style={{ width: "80px", marginTop: "8px" }}
+                    />
+                  )}
                 </div>
                 <div className="formGroup">
                   <label htmlFor="email">Email</label>
@@ -81,7 +100,11 @@ const Profile = () => {
                   />
                 </div>
                 {edit ? (
-                  <button onClick={handleEditFunction} type="submit" className="submitBtn">
+                  <button
+                    onClick={handleEditFunction}
+                    type="submit"
+                    className="submitBtn"
+                  >
                     Edit Profile
                   </button>
                 ) : (

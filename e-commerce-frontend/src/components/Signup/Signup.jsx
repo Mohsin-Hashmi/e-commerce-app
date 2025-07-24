@@ -15,7 +15,6 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [role, setRole] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +24,7 @@ const Signup = () => {
         email,
         password,
         confirmPassword,
-        role,
+        
       });
       dispatch(addUser(response?.data));
       navigate('/login');
@@ -81,24 +80,6 @@ const Signup = () => {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="Repeat Password"
               />
-              <select
-                id="role"
-                name="role"
-                className="inputField"
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
-                required
-              >
-                <option className="options" value="">
-                  Select a role
-                </option>
-                <option className="options" value="user">
-                  User
-                </option>
-                <option className="options" value="admin">
-                  Admin
-                </option>
-              </select>
               <button type="submit" className="signupButton">
                 Sign Up
               </button>

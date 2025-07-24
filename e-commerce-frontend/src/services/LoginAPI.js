@@ -1,5 +1,5 @@
 import { BASE_URL } from "../utils/contants";
-import axios from "axios";
+import axios from 'axios'
 export const LoginAPI = async ({ email, password }) => {
   try {
     const response = await axios.post(
@@ -7,7 +7,8 @@ export const LoginAPI = async ({ email, password }) => {
       { email, password },
       { withCredentials: true }
     );
-    return response;
+    console.log("login user is", response)
+    return response?.data?.user;
   } catch (err) {
     throw new Error(err.response?.data || err.message)
   }

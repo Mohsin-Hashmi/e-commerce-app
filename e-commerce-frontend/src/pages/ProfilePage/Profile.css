@@ -1,8 +1,92 @@
+.profileSec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  background: #f9f9f9;
+}
 
-.createProfileHeading{
-    text-align: center;
-    font-size: 32px;
-    color: #3a3a3a;
-    padding: 30px 0;
-    font-weight:700;
+.profileWrapper {
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.createProfileHeading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #3a3a3a;
+}
+
+.profileForm {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formGroup label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup input[type="tel"] {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.formGroup input[type="text"]:focus,
+.formGroup input[type="email"]:focus,
+.formGroup input[type="tel"]:focus {
+  border-color: #a084e8;
+}
+
+.formGroup input[type="file"] {
+  padding: 6px 0;
+  font-size: 1rem;
+}
+
+.submitBtn {
+  padding: 12px 0;
+  background: #a084e8;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.submitBtn:hover {
+  background: #6c47c7;
+}
+
+.formGroup img {
+  display: block;
+  margin-top: 8px;
+  border-radius: 50%;
+  border: 2px solid #a084e8;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
 }

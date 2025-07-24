@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     try{
       const response = await LoginAPI({email, password});
-      dispatch(addUser(response.data));
+      dispatch(addUser(response));
       navigate('/');
     }catch(err){
       console.log(err);
@@ -44,7 +44,7 @@ const Login = () => {
           </div>
           <div className="loginFormWrapper">
             <h1 className="loginHeading">Log In</h1>
-            <form className="loginForm" action="" onSubmit={handleSubmit}>
+            <form className="loginForm" onSubmit={handleSubmit}>
               <input
                 className="inputField emailField"
                 type="email"
