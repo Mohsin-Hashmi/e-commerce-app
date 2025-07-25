@@ -12,14 +12,16 @@ const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-  origin: "http://localhost:5173",
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  credentials: true,
-}));
-app.use('/', authRouter);
-app.use('/', productRouter);
-app.use('/', contactRouter);
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true,
+  })
+);
+app.use("/", authRouter);
+app.use("/", productRouter);
+app.use("/", contactRouter);
 
 connectDB()
   .then(() => {

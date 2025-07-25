@@ -6,7 +6,6 @@ const ContactUs = require('../models/contact');
 
 contactRoute.post('/contact-us', async (req, res) => {
     try {
-
         const { name, email, message } = req.body;
         validateContactUsUser(req);
         const contact = new ContactUs({
@@ -18,7 +17,6 @@ contactRoute.post('/contact-us', async (req, res) => {
         res.status(200).json({
             message: "message send successfully"
         })
-
     } catch (err) {
         res.status(400).send("ERROR : " + err.message);
     }
