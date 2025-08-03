@@ -4,6 +4,7 @@ const connectDB = require("./config/db-connection");
 const authRouter = require("./routes/auth");
 const productRouter = require("./routes/product");
 const contactRouter = require("./routes/contact-us");
+const profileRouter = require('./routes/profile')
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -22,6 +23,7 @@ app.use(
 app.use("/", authRouter);
 app.use("/", productRouter);
 app.use("/", contactRouter);
+app.use("/", profileRouter);
 
 connectDB()
   .then(() => {

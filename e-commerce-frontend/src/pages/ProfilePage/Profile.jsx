@@ -5,23 +5,29 @@ import Footer from "../../components/Footer/Footer";
 import Banner from "../../components/Banner/Banner";
 import bannerLogo from "../../assets/images/Meubel House_Logos-05.webp";
 import { useState } from "react";
+import profileAPI from "../../services/profileAPI";
 const Profile = () => {
   const [profileData, setProfileData] = useState({
     name: "",
-    email: "",
     phone: "",
   });
   const [edit, setEdit] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
 
-  const handleEditFunction = () => {
+  const handleFunction = async (e) => {
     //API CALL
-    setEdit(true);
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("name", profileData.name);
+    formData.append("phone", profileData.phone);
+    formData.append("profileImage", profileImage);
+    const response = await profileAPI(formData)
+    console.log("response of profile api: ", response);
   };
   return (
     <>
       <Header />
-      <Banner image={bannerLogo} page="Profile" home="Home" para="Profile" />'
+      <Banner image={bannerLogo} page="Profile" home="Home" para="Profile" />
       <section className="profileSec">
         <div className="container">
           <div className="profileWrapper">
@@ -29,7 +35,7 @@ const Profile = () => {
               {edit ? "Edit Profile" : "Create Profile"}
             </h2>
 
-            <form className="profileForm">
+            <form className="profileForm" onSubmit={handleFunction}>
               <>
                 <div className="formGroup">
                   <label htmlFor="name">Full Name</label>
@@ -52,35 +58,17 @@ const Profile = () => {
                     id="profileImage"
                     name="profileImage"
                     accept="image/*"
-                    value={profileImage}
-                    onChange={(e) => setProfileImage(e.target.value)}
+                    onChange={(e) => setProfileImage(e.target.files[0])}
                     placeholder="Mohsin Hashmi"
                     required
                   />
-                  {profileImage && (
+                  {/* {profileImage && (
                     <img
                       src={URL.createObjectURL(profileImage)}
                       alt="Profile Preview"
                       style={{ width: "80px", marginTop: "8px" }}
                     />
-                  )}
-                </div>
-                <div className="formGroup">
-                  <label htmlFor="email">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={profileData.email}
-                    onChange={(e) =>
-                      setProfileData({
-                        ...profileData,
-                        email: e.target.value,
-                      })
-                    }
-                    required
-                    placeholder="mohsin.hashmi@gmail.com"
-                  />
+                  )} */}
                 </div>
                 <div className="formGroup">
                   <label htmlFor="phone">Phone</label>

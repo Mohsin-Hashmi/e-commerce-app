@@ -3,7 +3,12 @@ const createProfile = async (req, res) => {
   try {
     const { fullName, phoneNumber } = req.body;
     const profileImage = req.file.path;
-
+    if(!fullName || !phoneNumber || !profileImage){
+      return res.status(404).json({
+        success: false,
+        message: "All Fields are required"
+      })
+    }
     const newProfile = new Profile({
       fullName,
       phoneNumber,
