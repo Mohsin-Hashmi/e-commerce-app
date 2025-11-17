@@ -5,7 +5,7 @@ import bannerLogo from "../../assets/images/Meubel House_Logos-05.webp";
 import ProductsAPI from "../../services/ProductsAPI";
 import { Link } from "react-router-dom";
 import OurServices from "../../components/OurServices/OurServices";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addProduct } from "../../utils/productSlice";
 import { useEffect, useState } from "react";
 import Loading from "../../components/Loading/Loading";

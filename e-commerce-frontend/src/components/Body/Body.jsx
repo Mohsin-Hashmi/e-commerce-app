@@ -22,7 +22,7 @@ const Body = () => {
           </div>
         </div>
       </section>
-      {/* Rasnge Section */}
+      {/* Range Section */}
       <section className="rangeSec">
         <div className="container">
           <div className="rangeSecWrapper">

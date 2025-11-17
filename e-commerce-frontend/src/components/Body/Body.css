@@ -13,7 +13,7 @@
   top: 0;
   left: 0;
   background-position: center;
-  z-index: -1;
+  z-index: 10;
 }
 
 .bannerSecWrapper {
@@ -25,6 +25,8 @@
   right: 60px;
   top: 230px;
   padding: 62px 43px 37px 39px;
+  z-index: 10;
+  border-radius: 20px;
 }
 
 .newArrivalPara {
@@ -42,6 +44,7 @@
   color: #333333;
   font-weight: medium;
   margin: 17px 0 46px 0;
+  
 }
 
 .buyNowBtn {
@@ -54,10 +57,11 @@
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
+  display: inline-block;
 }
 
 .rangeSecWrapper {
-  padding: 56px 0;
+  padding: 120px 0;
   text-align: center;
 }
 .rangeSecWrapper .rangeSecHeading {
@@ -85,8 +89,8 @@
 }
 .roomInspirationSec{
   background-color: #FCF8F3;
-  padding: 44px 0;
+  padding: 80px 0;
 }
 .imageGallerySec{
-  padding: 44px 0;
+  padding: 80px 0;
 }

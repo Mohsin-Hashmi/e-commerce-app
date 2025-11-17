@@ -6,12 +6,16 @@ import profile from "../../assets/images/user-circle.webp";
 import cart from "../../assets/images/shopping bag.webp";
 import SearchModal from "../SearchModal/SearchModal";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+
 const Header = () => {
   const [searchModal, setSearchModal] = useState(false);
+  const cartQuantity = useSelector((state) => state.cart.totalQuantity);
 
   const handleClose = () => {
     setSearchModal(false);
   };
+
   return (
     <>
       <header className="header">
@@ -49,8 +53,11 @@ const Header = () => {
               <Link to="/profile">
                 <img src={profile} alt="profile icon" />
               </Link>
-              <Link to="/cart">
+              <Link to="/cart" className="cartIconWrapper">
                 <img src={cart} alt="cart icon" />
+                {cartQuantity > 0 && (
+                  <span className="cartBadge">{cartQuantity}</span>
+                )}
               </Link>
             </div>
           </nav>

@@ -1,10 +1,10 @@
 import { BASE_URL } from "../utils/contants";
 import axios from "axios";
-export const SignupAPI = async ({ name, email, password, confirmPassword, role }) => {
+export const SignupAPI = async (payload) => {
   try {
     const response= await axios.post(
       `${BASE_URL}/signup`,
-      { name, email, password, confirmPassword, role },
+       payload,
       { withCredentials: true }
     );
     return response;

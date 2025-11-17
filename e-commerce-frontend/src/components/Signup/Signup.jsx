@@ -10,22 +10,28 @@ import { useNavigate } from "react-router-dom";
 import { addUser } from "../../utils/userSlice";
 const Signup = () => {
   const dispatch = useDispatch();
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const payload = {
+    name, email, password, confirmPassword
+  }
 
+  const validateFileds = () => {
+     if (!name || !email || !password) {
+        alert("All fields are required");
+        return false;
+      }
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await SignupAPI({
-        name,
-        email,
-        password,
-        confirmPassword,
-        
-      });
+      if(!validateFileds()){
+        return;
+      }
+      const response = await SignupAPI(payload);
       dispatch(addUser(response?.data));
       navigate('/login');
     } catch (err) {
